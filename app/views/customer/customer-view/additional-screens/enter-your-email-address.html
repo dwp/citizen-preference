@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+<!-- <div id="nationality-hint" class="govuk-hint">
+  This is a page filled with address and residency information on the citizen.
+</div> -->
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            
+                <h1 class="govuk-fieldset__heading">
+                  Enter your email address
+                </h1>
+              </legend>
+            </fieldset>
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Email address"
+              },
+              id: "email-address",
+              name: "email-address",
+              type: "email",
+              autocomplete: "email"
+            }) }}
+
+
+
+<button class="govuk-button" value= "true" data-module="govuk-button" style="margin-bottom:50px;" onclick="check3()" >Continue</button>
+
+</fieldset>
+
+
+<script>
+  function check3() {
+    console.log(document.getElementById("yes"))
+
+    if (document.getElementById("email-address").value && document.getElementById("email-address").value ) {
+      window.location.href = "#"
+    } else {
+      window.location.href = "#"
+    }
+
+  }
+</script>
+
+  </div>
+
+
+{% endblock %}

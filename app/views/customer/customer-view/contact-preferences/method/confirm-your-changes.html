@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      
+          <h1 class="govuk-fieldset__heading">
+            Confirm your changes
+          </h1>
+        </legend>
+      </fieldset>
+
+
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+<table class="govuk-table">
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">Preferred contact method</th>
+  <td class="govuk-table__cell">
+    [selection]
+  </td>
+</tr>
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">Do you need an alternative format when we contact you?</th>
+  <td class="govuk-table__cell">
+    No
+  </td>
+</tr>
+</tbody>
+</table>
+
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+{{ govukButton({
+    text: "Confirm",
+    href: "/customer/customer-view/contact-preferences/method/updated-preferred-contact-method.html",
+    preventDoubleClick: true
+    }) }}
+
+    <p class="govuk-body">
+      <a href="/customer/customer-view/contact-preferences/method/abandon-journey.html" class="govuk-link">Cancel</a>
+    </p>
+
+<!-- <a class="govuk-link" href="/customer/customer-view/address-we-send-letters-to/abandon-journey.html">Cancel</a> -->
+</div>
+
+  </div>
+
+</div>
+
+{% endblock %}

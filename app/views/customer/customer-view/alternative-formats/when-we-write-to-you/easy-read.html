@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Easy read</h1>
+  <p class="govuk-body">
+  By sending the application you agree that the information you have given is complete and correct.
+  If you deliberately give the wrong or incomplete information, or you do not report any changes, you may:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>be prosecuted</li>
+  <li>need to pay a financial penalty</li>
+  <li>need to pay back any money you are overpaid if you are asked to</li>
+  </ul>
+
+  </div>
+
+  <div class="govuk-!-padding-bottom-6"></div>
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "I agree",
+      href: "/customer/customer-view/alternative-formats/when-we-write-to-you/confirm-your-changes.html"
+    }) }}
+  </div>
+</div>
+
+
+{% endblock %}

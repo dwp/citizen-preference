@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#writing-selection">Select how we should contact you when we need to write to you
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <form action="/customer/customer-view/contact-preferences/how-we-write-to-you/writing-selection" method="post" novalidate>
+    {{ govukRadios({
+      name: "HowWeWriteToYou",
+      fieldset: {
+        legend: {
+          text: "How should we contact you when we need to write to you?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      errorMessage: {
+        text: "Select how we should contact you when we need to write to you"
+      },
+    items: [
+      {
+        value: "Email",
+        text: "Email"
+      },
+      {
+        value: "SMS",
+        text: "SMS"
+      },
+      {
+        value: "Post",
+        text: "Post"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "I do not have a writing preference",
+        text: "I do not have a writing preference"
+      }
+    ]
+    })  
+  }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+
+{% endblock %}

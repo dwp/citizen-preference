@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+  <form action="/customer/customer-view/contact-preferences/how-we-write-to-you/writing-selection" method="post" novalidate>
+    {{ govukRadios({
+      name: "HowWeWriteToYou",
+      fieldset: {
+        legend: {
+          text: "How should we contact you when we need to write to you?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+    },
+    items: [
+      {
+        value: "Email",
+        text: "Email"
+      },
+      {
+        value: "SMS",
+        text: "SMS"
+      },
+      {
+        value: "Post",
+        text: "Post"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "I do not have a writing preference",
+        text: "I do not have a writing preference"
+      }
+    ]
+    })  
+  }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+
+{% endblock %}

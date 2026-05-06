@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" id="radioForm" action="/customer/customer-view/alternative-formats/when-we-write-to-you/colour-paper" method="post" novalidate>
+
+  {{ govukRadios({
+        name: "ColourPaper",
+        fieldset: {
+          legend: {
+            text: "What colour paper do you need",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Standard white",
+            text: "Standard white",
+            hint: {
+              text: "I do not need an alternative paper colour"
+            }
+          },
+          {
+            value: "Cream",
+            text: "Cream"
+          },
+          {
+            value: "Pastel Pink",
+            text: "Pastel Pink"
+          },
+          {
+            value: "Pastel yellow",
+            text: "Pastel yellow"
+          },
+          {
+            value: "Pastel green",
+            text: "Pastel green"
+          },
+          {
+            value: "Light blue",
+            text: "Light blue"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "I need a different colour",
+            text: "I need a different colour"
+          }
+        ]
+        })  
+      }}
+  <div class="govuk-!-padding-bottom-6"></div>
+
+  
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </div>
+  </div>
+  </form>
+
+  {% endblock %}

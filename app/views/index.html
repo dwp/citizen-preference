@@ -2,19 +2,146 @@
 
 {% set pageName="Home" %}
 
+{% block beforeContent %}
+
+
+{% endblock %}
+
+
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
+  <div class="govuk-width-container">
+    <h1 class="govuk-heading-l">
+      Citizen Preference Prototype
     </h1>
-test
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+
+    <h2 class="govuk-heading-m">
+      Customer facing designs
+    </h2>
+    
+    
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-customer">
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-customer-heading-1">
+              Version 3 <strong class="govuk-tag">Baselined</strong>
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-customer-with-summary-sections-summary-1">
+            Built by developers June 24
+          </div>
+        </div>
+        <div id="accordion-customer-content-1" class="govuk-accordion__section-content">
+          <p class="govuk-body"> This design has been built by the developers, but has been parked as a few questions are still outstanding. When the time is right, Product should be able to outline the expectations. We expect a design reset.</p>          
+          
+          <p class="govuk-body"> But we have iterated on them slightly since then. These changes can be found in <a href="https://lucid.app/lucidchart/b45b639f-a12e-4f92-a338-88fe6e8326eb/edit?invitationId=inv_e511e9da-24be-4f36-a84e-28f9866bba7d&page=0_0#" class="govuk-link">this Lucid board.</a> These changes have been ticketed by joseph.coates@dwp.gov.uk for the future.</p> 
+
+          <p class="govuk-body">
+            <a href="/customer/menu" class="govuk-link">View designs</a>
+          </p>
+    
+        </div>
+      </div>
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-customer-heading-2">
+              Version 2
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-customer-with-summary-sections-summary-2">
+            User testing Jan - March 24
+          </div>
+        </div>
+        <div id="accordion-customer-content-2" class="govuk-accordion__section-content">
+          <p class="govuk-body">This round of UR was conducted by Daniel de la Rubia, interaction designs built by David Doherty and written content by Patrick Wilson. The team was led by Matt Murphy.</p>
+          
+          <p class="govuk-body">
+            <a href="/customer/round-4-testing/menu" class="govuk-link">View designs</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-customer-heading-3">
+              Version 1
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-customer-with-summary-sections-summary-3">
+            User testing Nov - Dec 23
+          </div>
+        </div>
+        <div id="accordion-customer-content-3" class="govuk-accordion__section-content">
+          <p class="govuk-body">This round of UR was conducted by Daniel de la Rubia and the interaction designs built by David Doherty. The team was led by Matt Murphy.</p>
+          
+          <p class="govuk-body">
+            <a href="/customer/round-3-testing/menu" class="govuk-link">View designs</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <br>
+      
+    <h2 class="govuk-heading-m">
+      Agent facing designs
+    </h2>
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-agent">
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-agent-heading-1">
+              Version 1 <strong class="govuk-tag">Parked</strong>
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-agent-with-summary-sections-summary-1">
+            Designed Aug 24
+          </div>
+        </div>
+        <div id="accordion-agent-content-1" class="govuk-accordion__section-content">
+          <p class="govuk-body"> Parked for now due to outstanding questions such as how we build for 'masking sensitive data' and what tone of voice to use (for example first or third person). When the time is right, Product should be able to outline the expectations. We expect a design reset. We anticipate that the colleague version will mirror the customer version with the minor exception of offering Easy Read within the agent version.</p>          
+          
+          <p class="govuk-body">
+            <a href="agent/menu" class="govuk-link">View designs</a>
+          </p>
+    
+        </div>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">
+      Related prototypes
+    </h1>
+    
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#">Message Centre</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Evidence</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="https://customer-view.herokuapp.com/">Customer View</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Colleague View</a>
+      </li>
+    </ul>
   </div>
+</div>
+  
+
+  
+  
+  </div>
+     
+
 </div>
 
 {% endblock %}

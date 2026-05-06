@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Confirm your changes
+      </h1>
+    </legend>
+  </fieldset>
+
+<form action="/customer/customer-view/contact-preferences/how-we-write-to-you/confirm-your-changes" method="post" novalidate>
+{{ govukTable({
+  name: "HowWeWriteToYouSET",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  rows: [
+    [
+      {
+        text: "How we write to you"
+      },
+      {
+        text: data.HowWeWriteToYou
+      }
+    ]
+  ]
+}) }}
+
+<div class="govuk-inset-text">
+  Some letters may still need to be sent to you by post for legal reasons.
+</div>
+  
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Confirm"
+  }) }}
+
+  <p class="govuk-body">
+    <a href="/customer/customer-view/contact-preferences/how-we-speak-to-you/abandon-journey.html" class="govuk-link">Cancel</a>
+  </p>
+
+</form>
+</div>
+
+
+
+</div>
+</div>
+
+{% endblock %}

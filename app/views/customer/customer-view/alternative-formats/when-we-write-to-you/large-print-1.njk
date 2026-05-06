@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" id="radioForm" action="/customer/customer-view/alternative-formats/when-we-write-to-you/large-print-1" method="post" novalidate>
+  {{ govukRadios({
+        name: "LargePrint",
+        fieldset: {
+          legend: {
+            text: "What size print do you need?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Standard (12 point)",
+            text: "Standard (12 point)",
+            hint: {
+              text: "I do not need an alternative print size"
+            }
+          },
+          {
+            value: "Large (16 point)",
+            text: "Large (16 point)"
+          },
+          {
+            value: "Extra Large (18 point)",
+            text: "Extra Large (18 point)"
+          },
+          {
+            value: "Giant (26 point)",
+            text: "Giant (26 point)"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "I need a different print size",
+            text: "I need a different print size"
+          }
+        ]
+        })  
+      }}
+  <div class="govuk-!-padding-bottom-6"></div>
+  {{ govukButton({
+      text: "Continue"
+    }) }}
+  </div>
+  </div>
+  </form>
+
+  {% endblock %}

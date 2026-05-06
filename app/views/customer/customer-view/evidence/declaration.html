@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+<!-- <div id="nationality-hint" class="govuk-hint">
+  This is a page filled with address and residency information on the citizen.
+</div> -->
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <div class="govuk-width-container">
+            <h1 class="govuk-heading-l">Declaration</h1>
+            <p class="govuk-body">
+            By sending this evidence you agree that the information you have given is complete and correct.
+            If you deliberately give the wrong or incomplete information, or you do not report any changes, you may:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+            <li>be prosecuted</li>
+            <li>need to pay a financial penalty</li>
+            <li>need to pay back any money you are overpaid if you are asked to</li>
+            </ul>
+            </div>
+
+
+   {% from "govuk/components/button/macro.njk" import govukButton %}
+
+   <div class="govuk-button-group">
+       {{ govukButton({
+           text: "I agree - send my evidence",
+           href: "confirmation.html",
+           preventDoubleClick: true
+           }) }}
+ 
+     </div>
+ 
+
+
+{% endblock %}

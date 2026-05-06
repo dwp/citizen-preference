@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          We could not find your home address
+        </h1>
+      </legend>
+
+      <p>This means we do not have your home address on our records. You can contact the benefit that pays you to ask them to add your home address to our records.</p>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Return to 'How we contact you'
+      </button>
+
+    </div>
+
+    </fieldset>
+  </div>
+ </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+
+      <div class="govuk-width-container">
+        <h1 class="govuk-heading-l">Confirm address</h1>
+        <p>1 address found for <b>NE3 1YL</b> and <b>58</b>.</p>
+        <div class="govuk-inset-text">
+          58 Wellington House<br>
+          Windsor Street<br>
+          South Gosforth<br>
+          Newcastle upon Tyne<br>
+          NE3 1YL
+        </div>
+
+            
+        <p class="govuk-body"><a href="find-address" class="govuk-link">Search again</a></p>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="manual-entry" class="govuk-link">Enter address manually</a></p>
+        </div>
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  <div class="govuk-button-group">
+      {{ govukButton({
+          text: "Use this address",
+          href: "/customer/customer-view/address-we-send-letters-to/confirm-your-changes.html",
+          preventDoubleClick: true
+          }) }}
+
+    </div>
+
+    </div>
+
+    </div>
+
+{% endblock %}

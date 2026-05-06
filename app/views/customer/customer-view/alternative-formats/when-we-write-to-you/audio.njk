@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
+{% endblock %}
+{% block content %}
+
+<form action="/customer/customer-view/alternative-formats/when-we-write-to-you/audio" method="post" novalidate>
+  {{ govukRadios({
+        name: "Audio",
+        fieldset: {
+          legend: {
+            text: "What type of audio do you need?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "CD",
+            text: "CD"
+          },
+          {
+            value: "MP3 file",
+            text: "MP3 file"
+          },
+          {
+            value: "Cassette tape",
+            text: "Cassette tape"
+          },
+          {
+            value: "DVD",
+            text: "DVD"
+          }
+        ]
+        })  
+      }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+</form>
+
+{% endblock %}
