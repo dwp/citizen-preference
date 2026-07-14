@@ -1,12 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{% include "preferences-agent/breadcrumbs/agent-view/address-we-send-letters-to-error.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -373,9 +379,9 @@
       console.log(document.getElementById("yes"))
 
       if (document.getElementById("address-line-1").value && document.getElementById("address-line-2").value && document.getElementById("address-line-4").value && document.getElementById("country").value) {
-        window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/international/confirm-your-changes.html"
+        window.location.href = "/agent/agent-view/address-we-send-letters-to/international/confirm-your-changes.html"
       } else {
-        window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/international/error/enter-address.html"
+        window.location.href = "/agent/agent-view/address-we-send-letters-to/international/error/enter-address.html"
       }
 
     }

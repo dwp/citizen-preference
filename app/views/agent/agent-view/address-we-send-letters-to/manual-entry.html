@@ -1,12 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{% include "preferences-agent/breadcrumbs/agent-view/address-we-send-letters-to.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -65,13 +71,13 @@
   
     <!--{{ govukButton({
         text: "Continue",
-        href: "/preferences-agent/agent-view/address-we-send-letters-to/update-address-check.html"
+        href: "/agent/agent-view/address-we-send-letters-to/update-address-check.html"
       }) }} -->
       
       <button class="govuk-button" value= "true" data-module="govuk-button" style="margin-bottom:50px;" onclick="check3()" >Continue</button>
       
     <!-- <div>
-        <a href="/preferences-agent/agent-view/address-we-send-letters-to/update-address-1.html" class="govuk-body-m">Find an address
+        <a href="/agent/agent-view/address-we-send-letters-to/update-address-1.html" class="govuk-body-m">Find an address
       </a>
       </div> -->
 
@@ -84,9 +90,9 @@
       console.log(document.getElementById("yes"))
 
       if (document.getElementById("address-line-1").value && document.getElementById("address-town").value && document.getElementById("address-postcode").value ) {
-        window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/confirm-your-changes.html"
+        window.location.href = "/agent/agent-view/address-we-send-letters-to/confirm-your-changes.html"
       } else {
-        window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/error/manual-entry.html"
+        window.location.href = "/agent/agent-view/address-we-send-letters-to/error/manual-entry.html"
       }
 
     }

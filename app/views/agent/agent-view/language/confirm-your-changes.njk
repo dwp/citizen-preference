@@ -1,12 +1,19 @@
 {% extends "layouts/main.html" %}
-{%- from "govuk/components/tag/macro.njk" import govukTag -%}
-
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
 
 {% block beforeContent %}
-  {% include "preferences-agent/breadcrumbs/agent-view/preferred-language.html" %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
 {% endblock %}
 
 {% block content %}
@@ -25,7 +32,7 @@
 
   
 
-<form action="/preferences-agent/agent-view/language/confirm-your-changes" method="post" novalidate>
+<form action="/agent/agent-view/language/confirm-your-changes" method="post" novalidate>
 {{ govukTable({
   name: "SelectLanguageSET",
   captionClasses: "govuk-table__caption--m",
@@ -50,7 +57,7 @@
   }) }}
 
   <p class="govuk-body">
-    <a href="/preferences-agent/agent-view/language/abandon-journey.html" class="govuk-link">Cancel</a>
+    <a href="/agent/agent-view/language/abandon-journey.html" class="govuk-link">Cancel</a>
   </p>
 
 </div>

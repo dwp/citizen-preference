@@ -65,7 +65,7 @@
               label: {
                 text: "Landline phone number"
               },
-              id: "landline-number",
+              id: "/agent/agent-view/landline-number",
               name: "landlineNumber",
               type: "tel",
               autocomplete: "tel",
@@ -85,10 +85,10 @@
     function check3() {
       console.log(document.getElementById("yes"))
 
-      if (document.getElementById("landline-number").value && document.getElementById("landline-number").value ) {
-        window.location.href = "/preferences/customer-view/landline-number/confirm-your-changes.html"
+      if (document.getElementById("/agent/agent-view/landline-number").value && document.getElementById("/agent/agent-view/landline-number").value ) {
+        window.location.href = "/customer/customer-view/landline-number/confirm-your-changes.html"
       } else {
-        window.location.href = "/preferences/customer-view/phone-number/error/landline-number.html"
+        window.location.href = "/customer/customer-view/phone-number/error/landline-number.html"
       }
 
     }

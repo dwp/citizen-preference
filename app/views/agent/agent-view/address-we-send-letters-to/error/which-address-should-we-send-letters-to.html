@@ -1,12 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{% include "preferences/breadcrumbs/customer-view/address-we-send-letters-to.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -101,12 +107,12 @@
       }
     }
     if (!hasSelection) {
-      window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/error/which-address-should-we-send-letters-to.html";
+      window.location.href = "/agent/agent-view/address-we-send-letters-to/error/which-address-should-we-send-letters-to.html";
     } else {
       if (document.getElementById("different-address").checked) {
-        window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/uk-or-international.html"
+        window.location.href = "/agent/agent-view/address-we-send-letters-to/uk-or-international.html"
       } else {
-        window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/home-address.html"
+        window.location.href = "/agent/agent-view/address-we-send-letters-to/home-address.html"
       }
     }
   }

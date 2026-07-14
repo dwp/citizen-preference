@@ -1,18 +1,19 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block header %}
-  {% include "round-3/components/key-details.html" %}
-{% endblock %}
-
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
 {% endblock %}
 
 {% block content %}
@@ -61,12 +62,12 @@
       }
     }
     if (!hasSelection) {
-      window.location.href = "/round-3/2b/uk-or-international-error.html";
+      window.location.href = "round-3-testing/2b/uk-or-international-error.html";
     } else {
       if (document.getElementById("UK-yes").checked) {
-        window.location.href = "/round-3/2b/update-address-1.html"
+        window.location.href = "round-3-testing/2b/update-address-1.html"
       } else {
-        window.location.href = "/round-3/2b/international-address.html"
+        window.location.href = "round-3-testing/2b/international-address.html"
       }
     }
   }

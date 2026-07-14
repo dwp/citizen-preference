@@ -1,13 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{% include "preferences-agent/breadcrumbs/agent-view/landline-number-singular.html" %}
-
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -28,7 +33,7 @@
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="landline-number">Change<span class="govuk-visually-hidden"> change landline phone number</span></a>
+                  <a class="govuk-link" href="/agent/agent-view/landline-number">Change<span class="govuk-visually-hidden"> change landline phone number</span></a>
                 </li>
                 <li class="govuk-summary-list__actions-list-item">
                   <a class="govuk-link" href="remove-number">Remove<span class="govuk-visually-hidden"> remove landline phone number</span></a>

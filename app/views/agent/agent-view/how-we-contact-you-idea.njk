@@ -1,16 +1,20 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{% include "preferences-agent/breadcrumbs/agent-view/how-we-contact-you.html" %}
-
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
-
 
 {% block content %}
 
@@ -95,10 +99,10 @@
                 <dd class="govuk-summary-list__actions">
                   <ul class="govuk-summary-list__actions-list">
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="phone-number/add/phone-number">Add<span class="govuk-visually-hidden"> add mobile phone number</span></a>
+                      <a class="govuk-link" href="/agent/agent-view/phone-number/add/phone-number">Add<span class="govuk-visually-hidden"> add mobile phone number</span></a>
                     </li>
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="phone-number/phone-number-list">Change<span class="govuk-visually-hidden"> change mobile phone numbers</span></a>
+                      <a class="govuk-link" href="/agent/agent-view/phone-number/phone-number-list">Change<span class="govuk-visually-hidden"> change mobile phone numbers</span></a>
                     </li>
                   </ul>
                 </dd>
@@ -116,7 +120,7 @@
                       <a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> add landline phone number</span></a>
                     </li>
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="landline-number/landline-number-list">Change<span class="govuk-visually-hidden"> change landline phone number</span></a>
+                      <a class="govuk-link" href="/agent/agent-view/landline-number/landline-number-list">Change<span class="govuk-visually-hidden"> change landline phone number</span></a>
                     </li>
                   </ul>
                 </dd>
@@ -140,7 +144,7 @@
                 </dt>
                 <p>Standard (12 point)</p>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/preferences-agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
+                  <a class="govuk-link" href="/agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
                     Change<span class="govuk-visually-hidden">When we speak to you</span>
                   </a>
                 </dd>
@@ -151,7 +155,7 @@
                 </dt>
                 <p>Standard</p>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/preferences-agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
+                  <a class="govuk-link" href="/agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
                     Change<span class="govuk-visually-hidden">When we speak to you</span>
                   </a>
                 </dd>
@@ -162,7 +166,7 @@
                 </dt>
                 <p>I do not need an alternative format</p>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/preferences-agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
+                  <a class="govuk-link" href="/agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
                     Change<span class="govuk-visually-hidden">When we speak to you</span>
                   </a>
                 </dd>
@@ -173,7 +177,7 @@
                 </dt>
                 <p>I do not need an alternative format</p>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/preferences-agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
+                  <a class="govuk-link" href="/agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
                     Change<span class="govuk-visually-hidden">When we speak to you</span>
                   </a>
                 </dd>
@@ -184,7 +188,7 @@
                 </dt>
                 <p>I do not need an alternative format</p>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/preferences-agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
+                  <a class="govuk-link" href="/agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
                     Change<span class="govuk-visually-hidden">When we speak to you</span>
                   </a>
                 </dd>
@@ -195,7 +199,7 @@
                 </dt>
                 <p>I do not need an alternative format</p>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/preferences-agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
+                  <a class="govuk-link" href="/agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
                     Change<span class="govuk-visually-hidden">When we speak to you</span>
                   </a>
                 </dd>
@@ -206,7 +210,7 @@
                 </dt>
                 <p>I do not need an alternative format</p>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/preferences-agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
+                  <a class="govuk-link" href="/agent/agent-view/alternative-formats/when-we-speak-to-you/how-should-we-contact-you-if-we-need-to-speak-to-you">
                     Change<span class="govuk-visually-hidden">When we speak to you</span>
                   </a>
                 </dd>
@@ -219,7 +223,7 @@
     <div class="govuk-button-group">
       {{ govukButton({
         text: "Return to home",
-        href: "/preferences-agent/agent-view/homepage.html"
+        href: "./homepage.html"
       }) }}
     </div>
 </div>

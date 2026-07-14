@@ -1,17 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Personal details
-{% endblock %}
-
-{% block header %}
-  {% include "round-3/components/key-details.html" %}
-{% endblock %}
-
-
 {% block beforeContent %}
 
-{% include "round-4/breadcrumbs/colleague-view/2c/address-we-send-letters-to-international-error.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 

@@ -1,12 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{% include "preferences/breadcrumbs/customer-view/address-we-send-letters-to.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -62,7 +68,7 @@ Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
-    <form id="addressForm" action="../../how-we-contact-you.njk" method="POST">
+    <form id="addressForm" action="./../how-we-contact-you.njk" method="POST">
       <input type="hidden" name="address" id="addressInput"
         value="72 Guild Street, London, SE23 6FH">
       <div class="govuk-button-group">

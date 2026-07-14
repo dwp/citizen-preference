@@ -157,7 +157,7 @@ const setSpokenFormat = (req, res) => {
   Object.keys(altFormats.spoken.options).forEach((key) => validKeys.includes(key) || delete altFormats.spoken.options[key]);
 
   // checkAnswersOrDefault(patternRootPath + '/check-answers-spoken', res)
-  checkAnswersOrDefault('../round-3/1d/how-we-contact-you', res)
+  checkAnswersOrDefault('..round-3-testing/1d/how-we-contact-you', res)
 }
 
 /**

@@ -1,32 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Personal details
-{% endblock %}
-
-{% block header %}
-  {% include "round-3/components/key-details.html" %}
-{% endblock %}
-
-
 {% block beforeContent %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype of a new service. None of your data will be stored from this test'
-}) }}
-
-
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
 {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -60,7 +46,7 @@
                     <p>English</p>
                   {% endif %}
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="/preferences-agent/agent-view/language/language-selection">
+                    <a class="govuk-link" href="/agent/agent-view/language/language-selection">
                       Change<span class="govuk-visually-hidden">When we speak to them</span>
                     </a>
                   </dd>
@@ -76,7 +62,7 @@
                     </ul>
                   {% endif %}
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="/preferences-agent/agent-view/contact-preferences-agent/how-we-speak-to-you/speaking-selection">
+                    <a class="govuk-link" href="/agent/agent-view/contact-preferences-agent/how-we-speak-to-you/speaking-selection">
                       Change<span class="govuk-visually-hidden">How we speak to them</span>
                     </a>
                   </dd>
@@ -91,7 +77,7 @@
                     <p>No writing preference</p>
                   {% endif %}
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="/preferences-agent/agent-view/contact-preferences-agent/how-we-write-to-you/writing-selection">
+                    <a class="govuk-link" href="/agent/agent-view/contact-preferences-agent/how-we-write-to-you/writing-selection">
                       Change<span class="govuk-visually-hidden">How we write to you</span>
                     </a>
                   </dd>
@@ -103,7 +89,7 @@
                 <dd class="govuk-summary-list__value" id="mainHowWeWriteDiv" name="mainHowWeWriteDiv">
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/preferences-agent/agent-view/alternative-formats/when-we-write-to-you/how-should-we-write-to-you">
+                  <a class="govuk-link" href="/agent/agent-view/alternative-formats/when-we-write-to-you/how-should-we-write-to-you">
                     Change<span class="govuk-visually-hidden">Choose an alternative format </span>
                   </a>
                 </dd>
@@ -154,10 +140,10 @@
                 <dd class="govuk-summary-list__actions">
                   <ul class="govuk-summary-list__actions-list">
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="phone-number/add/phone-number">Add<span class="govuk-visually-hidden"> add mobile phone number</span></a>
+                      <a class="govuk-link" href="/agent/agent-view/phone-number/add/phone-number">Add<span class="govuk-visually-hidden"> add mobile phone number</span></a>
                     </li>
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="phone-number/phone-number-list">Change<span class="govuk-visually-hidden"> change mobile phone numbers</span></a>
+                      <a class="govuk-link" href="/agent/agent-view/phone-number/phone-number-list">Change<span class="govuk-visually-hidden"> change mobile phone numbers</span></a>
                     </li>
                   </ul>
                 </dd>
@@ -172,10 +158,10 @@
                 <dd class="govuk-summary-list__actions">
                   <ul class="govuk-summary-list__actions-list">
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="landline-number/add/landline-number">Add<span class="govuk-visually-hidden"> add landline phone number</span></a>
+                      <a class="govuk-link" href="/agent/agent-view/landline-number/add/landline-number">Add<span class="govuk-visually-hidden"> add landline phone number</span></a>
                     </li>
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="landline-number/landline-number-list">Change<span class="govuk-visually-hidden"> change landline phone number</span></a>
+                      <a class="govuk-link" href="/agent/agent-view/landline-number/landline-number-list">Change<span class="govuk-visually-hidden"> change landline phone number</span></a>
                     </li>
                   </ul>
                 </dd>

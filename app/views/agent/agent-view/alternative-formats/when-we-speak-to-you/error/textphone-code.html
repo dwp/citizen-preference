@@ -1,15 +1,20 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{% include "preferences-agent/breadcrumbs/agent-view/textphone-error.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
-
 {% block content %}
 
 {{ govukErrorSummary({
@@ -56,7 +61,7 @@
                 <span class="govuk-visually-hidden">Error:</span> Enter your security code
               </p>
 
-            <form action="../textphone-code-check" method="post" class="form">
+            <form action="./textphone-code-check" method="post" class="form">
                     <label class="govuk-label" for="2fa-code">
                         Enter security code
                     </label>
@@ -71,7 +76,7 @@
                 }) }}
             </form>
 
-            <p><a href="../textphone-resend-code">I did not get a security code</a></p>
+            <p><a href="./textphone-resend-code">I did not get a security code</a></p>
 
            
         </div>

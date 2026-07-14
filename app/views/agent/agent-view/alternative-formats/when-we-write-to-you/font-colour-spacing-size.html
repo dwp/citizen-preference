@@ -1,13 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-
 {% block beforeContent %}
 
-{% include "preferences-agent/breadcrumbs/agent-view/font-colour-spacing-size.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -44,7 +49,7 @@ Content page template – {{ serviceName }} – GOV.UK Prototype Kit
   </div>
   
   <p class="govuk-body">
-    <a href="/preferences-agent/agent-view/alternative-formats/when-we-write-to-you/the-format-i-need-is-not-listed-here.html" class="govuk-link">The format I need is not listed here</a>
+    <a href="/agent/agent-view/alternative-formats/when-we-write-to-you/the-format-i-need-is-not-listed-here.html" class="govuk-link">The format I need is not listed here</a>
   </p>
   
   <button type="submit" class="govuk-button" data-module="govuk-button">

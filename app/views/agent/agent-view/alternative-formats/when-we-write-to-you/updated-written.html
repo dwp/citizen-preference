@@ -1,13 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-
 {% block beforeContent %}
 
-{% include "preferences-agent/breadcrumbs/agent-view/when-we-write-to-you.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -54,11 +59,11 @@ Content page template – {{ serviceName }} – GOV.UK Prototype Kit
       {{ govukButton({
       text: "Return to 'How we contact you'",
       classes: "govuk-button--secondary",
-      href: "../../how-we-contact-you.njk",
+      href: "./../how-we-contact-you.njk",
       preventDoubleClick: true
       }) }}
 
-      <!-- <a class="govuk-link" href="/preferences-agent/agent-view/address-we-send-letters-to/abandon-journey.html">Cancel</a> -->
+      <!-- <a class="govuk-link" href="/agent/agent-view/address-we-send-letters-to/abandon-journey.html">Cancel</a> -->
     </div>
 
   </div>

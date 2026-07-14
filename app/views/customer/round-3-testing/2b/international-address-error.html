@@ -1,18 +1,19 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Error - international address
-{% endblock %}
-
-{% block header %}
-  {% include "round-3/components/key-details.html" %}
-{% endblock %}
-
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
+
 {% endblock %}
 
 {% block content %}
@@ -144,9 +145,9 @@ function autocomplete(input) {
       console.log(document.getElementById("yes"))
 
       if (document.getElementById("address-line-1").value && document.getElementById("address-line-2").value && document.getElementById("address-line-4").value && document.getElementById("country").value) {
-        window.location.href = "/round-3/2b/international-check.html"
+        window.location.href = "round-3-testing/2b/international-check.html"
       } else {
-        window.location.href = "/round-3/2b/international-address-error.html"
+        window.location.href = "round-3-testing/2b/international-address-error.html"
       }
 
     }

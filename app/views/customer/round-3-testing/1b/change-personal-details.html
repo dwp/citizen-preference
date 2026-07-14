@@ -1,39 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
-
-{{
-  hmrcLanguageSelect({
-    language: 'en',
-    en: {
-      href: '?en'
-    },
-    cy: {
-      href: '?cy'
-    }
-  })
-}}
-
-    <!--Crumble menu-->
-    {{ govukBreadcrumbs({
-      items: [
-          {
-          text: "Home",
-          href: "homepage"
-          },
-          {
-          text: "Change your personal details",
-          href: "#"
-          }
-      ]
-      }) }}
-
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -168,7 +147,7 @@
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Return",
-      href: "/round-3/1b/homepage.html"
+      href: "/customer/round-3-testing/1b/homepage"
     }) }}
   </div>
 {% endblock %}

@@ -1,12 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block beforeContent %}
 
-{% include "preferences-agent/breadcrumbs/agent-view/address-we-send-letters-to-error.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -79,7 +85,7 @@
 }) }} -->
 
 <p class="govuk-body">
-  <a href="/preferences-agent/agent-view/address-we-send-letters-to/manual-entry.html" class="govuk-link">Enter address manually</a>
+  <a href="/agent/agent-view/address-we-send-letters-to/manual-entry.html" class="govuk-link">Enter address manually</a>
 </p>
 
 <button class="govuk-button" value= "true" data-module="govuk-button" style="margin-bottom:50px;" onclick="check3()" >Find address</button>
@@ -100,9 +106,9 @@
       console.log(document.getElementById("yes"))
 
       if (document.getElementById("address-number").value && document.getElementById("address-postcode").value ) {
-        window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/select-new-address.html"
+        window.location.href = "/agent/agent-view/address-we-send-letters-to/select-new-address.html"
       } else {
-        window.location.href = "/preferences-agent/agent-view/address-we-send-letters-to/error/find-address.html"
+        window.location.href = "/agent/agent-view/address-we-send-letters-to/error/find-address.html"
       }
 
     }

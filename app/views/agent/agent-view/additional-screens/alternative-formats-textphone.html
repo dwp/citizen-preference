@@ -1,13 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-
 {% block beforeContent %}
 
-{% include "preferences/breadcrumbs/customer-view/when-we-write-to-you.html" %}
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+  }) }}
+  
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item" aria-current="true"> <span class="govuk-body-s"> English  </span></li>
+    <li class="dwp-language-toggle__list-item">    
+    <a href="#" hreflang="cy" lang="cy" rel="alternate" class="govuk-link--no-visited-state" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+    </li>
+  </ul>
 
 {% endblock %}
 
@@ -52,14 +57,14 @@ Content page template – {{ serviceName }} – GOV.UK Prototype Kit
       {{ govukButton({
       text: "Add textphone number",
       classes: "govuk-button",
-      href: "../agent-view/alternative-formats/when-we-write-to-you/textphone.html",
+      href: "./agent-view/alternative-formats/when-we-write-to-you/textphone.html",
       preventDoubleClick: true
       }) }}
 
-      <!-- <a class="govuk-link" href="/preferences/customer-view/address-we-send-letters-to/abandon-journey.html">Cancel</a> -->
+      <!-- <a class="govuk-link" href="/customer/customer-view/address-we-send-letters-to/abandon-journey.html">Cancel</a> -->
 
       <p class="govuk-body">
-        <a href="../how-we-contact-you.html" class="govuk-link">Return to 'How we contact you'</a>
+        <a href="./how-we-contact-you.html" class="govuk-link">Return to 'How we contact you'</a>
       </p>
 
     </div>
